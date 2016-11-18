@@ -21,7 +21,8 @@ class SalesTransactionController extends Controller
      */
     public function index()
     {
-        $sales_transactions = SalesTransaction::all();
+        $sales_transactions = SalesTransaction::where('user_id', Auth::id())->get();
+        //dd($sales_transactions);
         return view('sales_transactions.index', compact('sales_transactions'));
     }
 

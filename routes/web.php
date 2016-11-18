@@ -20,3 +20,6 @@ Route::resource('sales', 'SalesTransactionController');
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('logout', 'Auth\LoginController@logout');
+Route::get('/reports',function(){
+	return view('reports');
+});
