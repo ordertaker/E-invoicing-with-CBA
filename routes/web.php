@@ -16,10 +16,12 @@ Route::get('/', function () {
 });
 
 Route::resource('sales', 'SalesTransactionController');
+Route::resource('reports', 'ReportsController');
 
 Auth::routes();
 Route::get('/home', 'HomeController@index');
 Route::get('logout', 'Auth\LoginController@logout');
-Route::get('/reports',function(){
-	return view('reports');
-});
+// Route::get('/reports',function(){
+// 	return view('reports');
+// })->middleware('auth');
+
